@@ -1,5 +1,4 @@
 #include"Enemy.h"
-#include<math.h>
 
 int Enemy::ariveHandle = 0;
 int Enemy::destroyHandle = 0;
@@ -59,16 +58,19 @@ void Enemy::clashUpdate()
 	}
 
 	rotate -= 15.0f;
+
+	pos.x += clashVec.x;
+	pos.y += clashVec.y;
 }
 
 void Enemy::draw()
 {
 	if (isMode == arive)
 	{
-		DrawGraph(pos.x - 64, pos.y - 64, ariveHandle, true);
+		DrawGraph((int)pos.x - 64, (int)pos.y - 64, ariveHandle, true);
 	}
 	else
 	{
-		DrawRotaGraph(pos.x, pos.y, 1.0, rotate * (PI / 180), destroyHandle, true);
+		DrawRotaGraph((int)pos.x, (int)pos.y, 1.0, rotate * (PI / 180), destroyHandle, true);
 	}
 }

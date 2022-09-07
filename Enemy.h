@@ -1,6 +1,6 @@
 #pragma once
 #include"DxLib.h"
-
+#include<math.h>
 
 enum Mode
 {
@@ -9,11 +9,12 @@ enum Mode
 	clash = 2
 };
 
-const float PI = 3.14159265;
+const float PI = 3.14159265f;
 
 class Enemy
 {
 private:
+	//‰æ‘œƒnƒ“ƒhƒ‹
 	static int ariveHandle;
 	static int destroyHandle;
 
@@ -21,6 +22,8 @@ public:
 	FLOAT3 pos;
 	FLOAT3 startPos;
 	float rotate = 0;
+
+	FLOAT3 clashVec;
 
 	int isMode;
 
